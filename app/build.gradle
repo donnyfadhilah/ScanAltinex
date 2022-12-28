@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+}
+
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+//    namespace 'id.ac.scanaltinex'
+    buildToolsVersion "30.0.3"
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "id.ac.scanaltinex"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.navigation:navigation-fragment:2.5.3'
+    implementation 'androidx.navigation:navigation-ui:2.5.3'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+//    Odoo
+    implementation 'com.oogbox.api:odoo:1.0.4'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.android.volley:volley:1.1.1'
+
+//    butterknife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+//    Annimation
+    implementation 'com.airbnb.android:lottie:5.2.0'
+//    scanner
+//    implementation 'com.google.zxing:core:3.4.0'
+//    implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
+//    implementation "com.journeyapps:zxing-android-embedded:3.6.0"
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+}
